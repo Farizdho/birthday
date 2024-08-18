@@ -3,40 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Selamat Ulang tahun Nasywaa</title>
+    <title>Selamat Ulang Tahun Nasywa Adhiya Putri</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap');
 
       body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
         background: linear-gradient(to right, #ffafbd, #ffc3a0);
-        font-family: 'Arial', sans-serif;
+        font-family: 'Poppins', sans-serif;
         overflow: hidden;
+      }
+      .header {
+        display: flex;
+        font-family: 'Great Vibes', cursive;
+        font-size: 4em;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: center;
       }
       .container {
         text-align: center;
         background: rgba(255, 255, 255, 0.2);
-        padding: 40px;
+        padding: 30px;
         border-radius: 15px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
         z-index: 2;
-        max-width: 90%; /* Membatasi lebar maksimal agar sesuai dengan layar kecil */
       }
-      .typing {
-        font-size: 2.5em;
+      .message {
+        font-size: 2em;
         color: #ffffff;
-        font-family: 'Great Vibes', cursive;
-        border-right: 2px solid #ffffff;
-        white-space: normal; /* Membuat teks membungkus ke baris berikutnya */
-        overflow: hidden;
-        width: 0;
-        word-wrap: break-word; /* Membungkus kata yang panjang */
-        animation: typing 4s steps(40, end) forwards,
-          blink-caret 0.75s step-end infinite;
+        opacity: 0;
+        animation: fadeIn 3s ease-in-out forwards; /* Menggunakan animasi fade-in */
       }
       .balloons {
         position: fixed;
@@ -88,21 +93,12 @@
         background-color: #88d8b0;
       }
 
-      @keyframes typing {
+      @keyframes fadeIn {
         from {
-          width: 0;
+          opacity: 0;
         }
         to {
-          width: 100%;
-        }
-      }
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: #ffffff;
+          opacity: 1;
         }
       }
       @keyframes floatUp {
@@ -116,8 +112,19 @@
     </style>
   </head>
   <body>
+    <div class="header">
+      Selamat Ulang Tahun ke-17 <br />Nasywa Adhiya Putri<br />🎉🎉🎉🎉🎉🎉🎉🎉
+    </div>
+
     <div class="container">
-      <div class="typing" id="birthdayMessage"></div>
+      <div class="message">
+        Tujuh belas tahun adalah usia yang istimewa, di mana mimpi mulai
+        terbentuk dan dunia terasa penuh dengan kemungkinan tak terbatas. Semoga
+        tahun ke-17 Nasywa dipenuhi dengan momen yang tak terlupakan,
+        kebahagiaan yang melimpah, dan cinta dari orang-orang yang paling peduli
+        padamu.Yang terbaik untuk Nasywaa cantiiiik, maniiisssssss, Gemeeessss
+        hhe
+      </div>
     </div>
 
     <div class="balloons">
@@ -128,27 +135,5 @@
       <div class="balloon"></div>
       <div class="balloon"></div>
     </div>
-
-    <script>
-      const message ='Selamat Ulang Tahun yang ke-17! 🎉
-
-Tujuh belas tahun adalah usia yang istimewa, di mana mimpi mulai terbentuk dan dunia terasa penuh dengan kemungkinan tak terbatas. Saat kamu melangkah ke babak baru dalam hidupmu ini, aku berharap kamu memiliki keberanian untuk mengejar mimpi-mimpimu, kebijaksanaan untuk membuat pilihan yang tepat, dan kebahagiaan dalam setiap petualangan baru.
-
-Semoga tahun ke-17mu dipenuhi dengan momen yang tak terlupakan, kebahagiaan yang melimpah, dan cinta dari orang-orang yang paling peduli padamu. Ingatlah selalu bahwa kamu mampu melakukan hal-hal luar biasa—ini baru permulaan dari perjalanan hebatmu.
-
-Nikmati setiap detik menjadi tujuh belas! Yang terbaik masih akan datang.';
-      const typingElement = document.getElementById('birthdayMessage');
-
-      let i = 0;
-      function typeWriter() {
-        if (i < message.length) {
-          typingElement.innerHTML += message.charAt(i);
-          i++;
-          setTimeout(typeWriter, 100); // Adjust the speed here (in milliseconds)
-        }
-      }
-
-      window.onload = typeWriter;
-    </script>
   </body>
 </html>
